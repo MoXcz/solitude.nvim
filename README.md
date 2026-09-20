@@ -4,15 +4,34 @@ A dark Neovim colorscheme with mostly neutral text, restrained coral and sand
 accents, warm-grey strings, and background-only grey selection. Muted sage marks
 Git additions and success. Includes matching Kitty and Obsidian palette exports.
 
-## Load locally
+## Installation
+
+### Neovim with `vim.pack`
+
+Requires Neovim 0.12 or newer and `git`. Add this to your `init.lua`:
 
 ```lua
+vim.pack.add({
+  { src = "https://github.com/MoXcz/solitude.nvim" },
+})
+
 vim.cmd.colorscheme("solitude")
-vim.opt.runtimepath:prepend(vim.fn.expand("~/workspace/github.com/solitude.nvim"))
 ```
 
-The repository can also be installed using a Neovim plugin manager. Load the
-colorscheme after making the plugin available on `runtimepath`.
+### Clone for local editing and exports
+
+```sh
+git clone https://github.com/MoXcz/solitude.nvim.git ~/solitude.nvim
+```
+
+To load this working copy directly, add the following to your `init.lua`:
+
+```lua
+vim.opt.runtimepath:prepend(vim.fn.expand("~/solitude.nvim"))
+vim.cmd.colorscheme("solitude")
+```
+
+For local development, prefer the block above to reload changes by running `:colorscheme solitude`.
 
 ## Where to edit
 
